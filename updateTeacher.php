@@ -1,7 +1,7 @@
 <?php
 include "db.php";
 
-if(issetPOST['update']){
+if(isset($_POST['update'])){
     $old_name = $_POST['old_name'];
     $teacher_name = $_POST['teacher_name'];
     $specialization = $_POST['specialization'];
