@@ -1,6 +1,6 @@
 <?php
+session_start(); 
 include 'db.php';
-session_start();
 
 if(isset($_POST['email']) && isset($_POST['password'])){
     $email = $_POST['email'];
@@ -15,11 +15,15 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         exit();
     }
 
-    $sql = "SELECT * FROM users WHERE email='$email'";
-    $result = mysqli_query($conn, $sql);
+    // التعديل الآمن يبدأ هنا 🛡️
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if(mysqli_num_rows($result) === 1){
-        $row = mysqli_fetch_assoc($result);
+    if($result && $result->num_rows === 1){
+        $row = $result->fetch_assoc();
+        // التعديل الآمن ينتهي هنا
         
         // فحص الباسورد المشفر
         if(password_verify($password, $row["password"])){
@@ -42,4 +46,3 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     }
 }
 ?>
-
