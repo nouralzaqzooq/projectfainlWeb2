@@ -104,10 +104,13 @@
 
     </div>
 
-    <!-- الفوتر المطور مع إيميل التواصل الخاص بكِ -->
+    <!-- الفوتر المطور مع إيميل التواصل المحدث -->
     <footer class="simple-footer">
         <div>نظام الإدارة المدرسية المطور © ٢٠٢٦</div>
-        <div>للتواصل والدعم الفني عبر البريد الإلكتروني: <a href="mailto:nouralzaqzooq@gmail.com">nouralzaqzooq@gmail.com</a></div>
+        <div>للتواصل والدعم الفني عبر البريد الإلكتروني: 
+            <a href="mailto:nouralzaqzooq@gmail.com">nouralzaqzooq@gmail.com</a> أو 
+            <a href="mailto:noorissa@gmail.com">noorissa@gmail.com</a>
+        </div>
     </footer>
 
 </body>
