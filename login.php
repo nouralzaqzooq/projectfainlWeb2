@@ -93,9 +93,15 @@
                     <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
                 </div>
 
-                <div class="input-group">
+                <div class="input-group" style="position: relative;">
                     <label for="password">كلمة المرور:</label>
-                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                    <input type="password" id="password" name="password" placeholder="........" required 
+                        style="padding-left: 40px;">
+                    
+                    <span onclick="togglePassword()" 
+                        style="position: absolute; left: 10px; top: 38px; cursor: pointer; color: #718096;">
+                        👁️
+                    </span>
                 </div>
 
                 <button type="submit" name="submit" class="btn-login">دخول إلى النظام</button>
@@ -112,6 +118,16 @@
             <a href="mailto:noorissa@gmail.com">noorissa@gmail.com</a>
         </div>
     </footer>
+    <script>
+    function togglePassword() {
+        let passwordField = document.getElementById("password");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+    </script>
 
 </body>
 </html>
