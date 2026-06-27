@@ -264,6 +264,12 @@ require 'auth.php';
     </div>
 
     <div class="main-content">
+        <?php if(isset($_COOKIE['user_name'])) { ?>
+            <div style="background: #ffffff; padding: 15px 30px; border-bottom: 1px solid #e2e8f0; color: #1e293b; font-weight: 600; text-align: right;">
+                <i class="fa-solid fa-handshake" style="color: #3b82f6; margin-left: 8px;"></i>
+                أهلاً بك مجدداً في نظام إدارة المدرسة يا <?php echo htmlspecialchars($_COOKIE['user_name']); ?>!
+            </div>
+        <?php } ?>
         
         <header>
             <div class="header-main">
